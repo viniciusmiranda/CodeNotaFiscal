@@ -1,4 +1,4 @@
-package com.projeto.notafiscal.NotaFiscal;
+package com.projeto.notafiscal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
