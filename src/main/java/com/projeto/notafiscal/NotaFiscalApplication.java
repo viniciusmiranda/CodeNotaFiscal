@@ -1,4 +1,4 @@
-package com.projeto.notafiscal.NotaFiscal;
+package com.projeto.notafiscal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
