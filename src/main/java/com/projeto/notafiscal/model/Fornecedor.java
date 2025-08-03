@@ -1,18 +1,24 @@
 package com.projeto.notafiscal.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "fornecedor")
 public class Fornecedor {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String cnpjCpf;
+
+    public Fornecedor(){
+
+    }
+    public Fornecedor(Long id, String nome, String cnpjCpf){
+        this.id = id;
+        this.nome = nome;
+        this.cnpjCpf = cnpjCpf;
+    }
 
     public Long getId() {
         return id;

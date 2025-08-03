@@ -7,8 +7,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Table(name = "nota_fiscal")
 public class NotaFiscal {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,8 +22,14 @@ public class NotaFiscal {
     private boolean valida;
     private String motivoInvalidade;
 
-    @OneToMany(mappedBy = "notaFiscal")
-    private List<ItemNotaFiscal> itens;
+    public NotaFiscal() {
+
+    }
+
+    public NotaFiscal(Long id, String chaveAcesso) {
+        this.id = id;
+        this.chaveAcesso = chaveAcesso;
+    }
 
     public Long getId() {
         return id;
@@ -73,10 +79,10 @@ public class NotaFiscal {
     public void setMotivoInvalidade(String motivoInvalidade) {
         this.motivoInvalidade = motivoInvalidade;
     }
-    public List<ItemNotaFiscal> getItens() {
-        return itens;
+    public BigDecimal getValorTotal() {
+        return valorTotal;
     }
-    public void setItens(List<ItemNotaFiscal> itens) {
-        this.itens = itens;
+    public void setValorTotal(BigDecimal valorTotal) {
+        this.valorTotal = valorTotal;
     }
 }

@@ -5,8 +5,9 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+@Entity
+@Table (name = "lancamento")
 public class Lancamento {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +24,22 @@ public class Lancamento {
     private BigDecimal valorEsperado;
     private boolean divergenciaValor;
     private String status;
+    public Lancamento(){
 
+    }
+    public Lancamento(Long id, NotaFiscal notaFiscal, ContaContabil contaContabil, BigDecimal valorLancado, LocalDateTime dataLancamento, String tipoLancamento
+    , boolean conferido, BigDecimal valorEsperado, boolean divergenciaValor, String status){
+        this.id = id;
+        this.notaFiscal = notaFiscal;
+        this.contaContabil = contaContabil;
+        this.valorLancado = valorLancado;
+        this.dataLancamento = dataLancamento;
+        this.tipoLancamento = tipoLancamento;
+        this.conferido = conferido;
+        this.valorEsperado = valorEsperado;
+        this.divergenciaValor = divergenciaValor;
+        this.status = status;
+    }
     public Long getId() {
         return id;
     }
