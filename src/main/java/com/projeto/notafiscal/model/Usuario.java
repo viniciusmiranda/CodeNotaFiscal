@@ -1,10 +1,25 @@
 package com.projeto.notafiscal.model;
 
-public class Usuario {
+import jakarta.persistence.*;
 
+@Entity
+@Table (name = "usuario")
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
     private String perfil;
+
+    public Usuario() {
+        
+    }
+
+    public Usuario(Long id, String email, String perfil){
+        this.id = id;
+        this.email = email;
+        this.perfil = perfil;
+    }
 
     public Long getId() {
         return id;

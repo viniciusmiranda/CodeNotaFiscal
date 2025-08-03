@@ -14,10 +14,5 @@ public class NotaFiscalController {
         this.notaFiscalImportService = notaFiscalImportService;
     }
 
-    @GetMapping("/listar")
-    public String mensagem(){
-        return notaFiscalImportService.dadosNotaFiscal();
-    }
-
 
 }
