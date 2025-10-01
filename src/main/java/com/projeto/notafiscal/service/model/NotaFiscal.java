@@ -1,10 +1,9 @@
-package com.projeto.notafiscal.model;
+package com.projeto.notafiscal.service.model;
 
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "nota_fiscal")
