@@ -1,4 +1,4 @@
-package com.projeto.notafiscal.service.model;
+package com.projeto.notafiscal.model;
 
 import jakarta.persistence.*;
 
