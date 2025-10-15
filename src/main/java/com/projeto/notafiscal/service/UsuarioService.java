@@ -1,7 +1,7 @@
 package com.projeto.notafiscal.service;
 
 import com.projeto.notafiscal.exceptions.ResourceNotFound;
-import com.projeto.notafiscal.service.model.Usuario;
+import com.projeto.notafiscal.model.Usuario;
 import com.projeto.notafiscal.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,7 @@ public class UsuarioService {
     {
         this.repository = repository;
     }
+
     public List<Usuario> listarUsuarios(){
         return repository.findAll();
     }

@@ -1,7 +1,7 @@
 package com.projeto.notafiscal.controller;
 
 import com.projeto.notafiscal.exceptions.ResourceNotFound;
-import com.projeto.notafiscal.service.model.Usuario;
+import com.projeto.notafiscal.model.Usuario;
 import com.projeto.notafiscal.service.UsuarioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +20,7 @@ public class UsuarioController {
 
     @GetMapping
     public List<Usuario> listarUsuarios(){
+
         return service.listarUsuarios();
     }
 
