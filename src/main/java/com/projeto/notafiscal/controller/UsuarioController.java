@@ -1,6 +1,6 @@
 package com.projeto.notafiscal.controller;
 
-import com.projeto.notafiscal.exceptions.ResourceNotFound;
+import com.projeto.notafiscal.exceptions.ResourceNotFoundException;
 import com.projeto.notafiscal.model.Usuario;
 import com.projeto.notafiscal.service.UsuarioService;
 import org.springframework.http.HttpStatus;
@@ -26,12 +26,8 @@ public class UsuarioController {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> buscarUsuario(@PathVariable Long id){
-        try{
             Usuario usuario = service.buscarPorId(id);
             return ResponseEntity.ok(usuario);
-        }catch (ResourceNotFound e){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
-        }
     }
 
     @PostMapping

@@ -13,8 +13,8 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(ResourceNotFound.class)
-    public ResponseEntity<Object> handleRecursosNaoEncontrado(ResourceNotFound ex){
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<Object> handleResourceNotFound(ResourceNotFoundException ex){
 
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
@@ -25,7 +25,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Object> handleGenericNaoEncontrado(Exception ex){
+    public ResponseEntity<Object> handleGenericNotFound(Exception ex){
 
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
