@@ -1,6 +1,6 @@
 package com.projeto.notafiscal.service;
 
-import com.projeto.notafiscal.exceptions.ResourceNotFound;
+import com.projeto.notafiscal.exceptions.ResourceNotFoundException;
 import com.projeto.notafiscal.model.Usuario;
 import com.projeto.notafiscal.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
@@ -21,14 +21,14 @@ public class UsuarioService {
     }
     public Usuario buscarPorId(Long id){
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFound("Usuário com Id" + id + "não foi encontrado."));
+                .orElseThrow(() -> new ResourceNotFoundException("Usuário com Id" + id + "não foi encontrado."));
     }
     public Usuario salvarUsuario(Usuario usuario){
         return repository.save(usuario);
     }
     public void deletarUsuario(Long id){
         if(!repository.existsById(id)){
-            throw new ResourceNotFound("Usuário com Id" + id + "não foi encontrado.");
+            throw new ResourceNotFoundException("Usuário com Id" + id + "não foi encontrado.");
         }
         repository.deleteById(id);
     }
